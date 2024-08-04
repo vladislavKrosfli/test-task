@@ -1,0 +1,1 @@
+[Необходимо создать REST-сервис с авторизацией по протоколу OAuth2 используя OpenSource решение для сервера авторизации.pdf](https://github.com/user-attachments/files/16488029/REST-.OAuth2.OpenSource.pdf)
