@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "dcad5f0e-dd42-45ca-948d-7ac8137cc976",
+		"name": "TestTask collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36618135"
+	},
+	"item": [
+		{
+			"name": "getting a jwt",
+			"item": [
+				{
+					"name": "Practitioner's token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "test_client",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "sJ7GoQcq4AJ1sSYe3Qkd5RQWldJfJpG2",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "practitioner1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/realms/TestRealm/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realms",
+								"TestRealm",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patient's token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "test_client",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "sJ7GoQcq4AJ1sSYe3Qkd5RQWldJfJpG2",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "patient1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/realms/TestRealm/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realms",
+								"TestRealm",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD methods",
+			"item": [
+				{
+					"name": "get all Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/patients",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							]
+						},
+						"description": "asd"
+					},
+					"response": []
+				},
+				{
+					"name": "delete Patient by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/patients/",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Patient by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ3anJhZnhtcWZwYU1DS25FYTBVR1duNEc1R1RqVFU3SEh1QVo2SHo0c2JjIn0.eyJleHAiOjE3MjI2MTExODcsImlhdCI6MTcyMjYxMDg4NywianRpIjoiNDg3MjY3YmItZTViNC00ZjgwLWI4OTctNzI0NzJmNGQ5ZTYxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9UZXN0UmVhbG0iLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiNjk5OTIwMjQtOGU4OS00YmRjLTlkNTctNGU2OWJiMjY2MDhiIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoidGVzdF9jbGllbnQiLCJzaWQiOiI3MGY3ZjEzZS1iYTJmLTQ1ODEtODVjMC1lOGY0ZGZkOWM2MDEiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUk9MRV9QUkFDVElUSU9ORVIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy10ZXN0cmVhbG0iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sInRlc3RfY2xpZW50Ijp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJicm9rZXIiOnsicm9sZXMiOlsicmVhZC10b2tlbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctYXBwbGljYXRpb25zIiwidmlldy1jb25zZW50Iiwidmlldy1ncm91cHMiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsIm1hbmFnZS1jb25zZW50IiwiZGVsZXRlLWFjY291bnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MgbWljcm9wcm9maWxlLWp3dCIsInNwcmluZ19yb2xlcyI6WyJST0xFX1BSQUNUSVRJT05FUiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXRlc3RyZWFsbSJdLCJ1cG4iOiJwcmFjdGl0aW9uZXIxIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoicHJhY3RpdGlvbmVyMSBwcmFjdGl0aW9uZXIxIiwiZ3JvdXBzIjpbIlJPTEVfUFJBQ1RJVElPTkVSIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtdGVzdHJlYWxtIl0sInByZWZlcnJlZF91c2VybmFtZSI6InByYWN0aXRpb25lcjEiLCJnaXZlbl9uYW1lIjoicHJhY3RpdGlvbmVyMSIsImZhbWlseV9uYW1lIjoicHJhY3RpdGlvbmVyMSIsImVtYWlsIjoicHJhY3RpdGlvbmVyMUBleGFtbGUuY29tIn0.IR__gkKEXXZojXCLW94iZdmnCSYNgAT0ClAv4MA0sGhh5I4stUPe25jjw8uHvyU-rzEWmsDtSSzdO6KeekuHV-RlBT1WVcNzW3ab7bosYjrnB-vsVdv32dKbh0uUxwVhBXOokS_tlUs7CtfSyJWsh84J_Ls-0UC_4yf10DNACJI9eLMQRE0X3XbOErWCoT_L8TKA14Q8skyDpVJBcTwFycKEtohsQiZEQ3JLByXqyPPm147U8Z4lSfbRGwPuu8kkd2aAVQurqWjtpvc6zyL0_FVNCs8S0eRgacnfuD4Dpjfm71k-nahIhvOxAmRyygWURpbQrwHEx2Nwl73FIHSQNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"7d3b2edb-5ce6-4c84-8599-067c64365e08\",\r\n    \"name\": \"new_name\",\r\n    \"gender\": \"female\",\r\n    \"birthdate\": \"2015-07-02T15:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/patients",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"patient101\",\r\n    \"gender\": \"female\",\r\n    \"birthdate\": \"2015-06-02T14:15:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/patients",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ3anJhZnhtcWZwYU1DS25FYTBVR1duNEc1R1RqVFU3SEh1QVo2SHo0c2JjIn0.eyJleHAiOjE3MjI3NTk5MzgsImlhdCI6MTcyMjc1OTYzOCwianRpIjoiNTUyNjUyMmEtYTRlMy00NTA2LWFjYTAtZGViZTQwMzc0Y2VkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9UZXN0UmVhbG0iLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiNjc3ZTE3YWEtOGNmNS00YmIxLWE2MGMtYzVkNmJiZjg4MzMwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoidGVzdF9jbGllbnQiLCJzaWQiOiI1MTM5YzRiNC0wYzY0LTQ3ZjQtOTZjYy05YzczYTlkNDdlMjQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUk9MRV9QUkFDVElUSU9ORVIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy10ZXN0cmVhbG0iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sInRlc3RfY2xpZW50Ijp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJicm9rZXIiOnsicm9sZXMiOlsicmVhZC10b2tlbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctYXBwbGljYXRpb25zIiwidmlldy1jb25zZW50Iiwidmlldy1ncm91cHMiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsIm1hbmFnZS1jb25zZW50IiwiZGVsZXRlLWFjY291bnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MgbWljcm9wcm9maWxlLWp3dCIsInNwcmluZ19yb2xlcyI6WyJST0xFX1BSQUNUSVRJT05FUiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXRlc3RyZWFsbSJdLCJ1cG4iOiJwcmFjdGl0aW9uZXIxIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJncm91cHMiOlsiUk9MRV9QUkFDVElUSU9ORVIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy10ZXN0cmVhbG0iXSwicHJlZmVycmVkX3VzZXJuYW1lIjoicHJhY3RpdGlvbmVyMSJ9.LuhPRx3Wz2PPtfyIQIKjSiQReQJIRsKQEx4lBB-aekjiZ806tDwWOudxyO9VT08pMF_i6X_FxwzyIbKhwSWY25t6Z3Vm8fKQ_8snYh3yCOl4wbXkH1YVgWF4xST_saLDpp_UV_ICNvojyJVaqN8mHRAMy-kFexkfJCt5ylSvUP0faD2imLjFwBK7AmlPu-vumDmejLm1qHbSKCw2c-HdBnkZUlo796PBYratA46xWdgaYj7Fux3AxTdcio1y9OMYXgPUTtPdCoYfH_y-YDQuQQjIoECmdecDZ67X5y3HiSftwVxyILS6bXMueZwvoh_Inb8lwNKbc5aw2EZXihIbmw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
