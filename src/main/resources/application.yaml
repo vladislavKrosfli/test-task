@@ -20,9 +20,9 @@ spring:
       enabled: always
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/test_db
-    username: bestuser
-    password: bestuser
+    url: jdbc:postgresql://localhost:5432/db
+    username: postgres
+    password: password
   sql:
     init:
       mode: always
@@ -30,7 +30,7 @@ spring:
   jpa:
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 server:
   port: 8081
   error:

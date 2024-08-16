@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\config\ApplicationConfig.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\config\KeycloakConfig.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\controller\PatientController.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\entity\Patient.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\exception\NotFoundException.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\repository\PatientRepository.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\service\KeycloakService.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\service\KeycloakServiceImpl.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\service\PatientService.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\service\PatientServiceImpl.java
+C:\Users\Admin\Desktop\java\projects\testTask\src\main\java\com\example\testTask\TestTaskApplication.java

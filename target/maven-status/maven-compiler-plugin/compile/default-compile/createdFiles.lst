@@ -1,0 +1,11 @@
+com\example\testTask\config\ApplicationConfig.class
+com\example\testTask\service\KeycloakService.class
+com\example\testTask\service\PatientService.class
+com\example\testTask\repository\PatientRepository.class
+com\example\testTask\TestTaskApplication.class
+com\example\testTask\service\KeycloakServiceImpl.class
+com\example\testTask\entity\Patient.class
+com\example\testTask\exception\NotFoundException.class
+com\example\testTask\config\KeycloakConfig.class
+com\example\testTask\service\PatientServiceImpl.class
+com\example\testTask\controller\PatientController.class

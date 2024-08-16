@@ -1,0 +1,43 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/TestRealm
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/TestRealm
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: admin-cli
+            client-secret: DfrbEcXeDQQfd7wRQiVG3Ce8q4bP6C7W
+            scope: openid
+            authorization-grant-type: authorization_code
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/db
+    username: postgres
+    password: password
+  sql:
+    init:
+      mode: always
+      continue-on-error: false
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8081
+  error:
+    include-message: always
+
+keycloak:
+  server-url: http://localhost:8080
+  realm: TestRealm
+  username: admin
+  password: admin
